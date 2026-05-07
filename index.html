@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ranié Henna — Elegant Henna Designs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --nude: #F5EDE3;
+    --nude-light: #FBF7F3;
+    --nude-mid: #EAD9C8;
+    --brown: #8B6245;
+    --brown-dark: #5C3D20;
+    --brown-light: #C4A882;
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --white: #FFFDF9;
+    --text: #3A2510;
+    --text-muted: #7A6050;
+    --border: #DDD0BE;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  /* ─── NAVIGATION ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,253,249,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.9rem;
+    color: var(--brown-dark);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.2rem;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--brown); }
+
+  .nav-book-btn {
+    background: var(--brown-dark);
+    color: var(--nude-light) !important;
+    padding: 0.5rem 1.3rem;
+    border-radius: 0;
+    transition: background 0.3s !important;
+  }
+
+  .nav-book-btn:hover { background: var(--brown) !important; color: var(--white) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--brown-dark);
+    transition: all 0.3s;
+  }
+
+  /* ─── PAGES ─── */
+  .page { display: none; min-height: 100vh; }
+  .page.active { display: block; }
+
+  /* ─── HOMEPAGE ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--nude-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 80%, rgba(201,169,110,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 60% at 80% 20%, rgba(139,98,69,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero-ornament::before,
+  .hero-ornament::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold-light);
+  }
+
+  .hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    color: var(--brown-dark);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 2.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--brown-dark);
+    color: var(--nude-light);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .btn-primary:hover {
+    background: var(--brown);
+    letter-spacing: 0.25em;
+  }
+
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--brown-dark);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    border: 1px solid var(--brown-light);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    background: var(--nude);
+    border-color: var(--brown);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--brown-light);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .scroll-hint::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold-light), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+
+  /* ─── SECTION STYLES ─── */
+  .section {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    padding: 6rem 2rem;
+  }
+
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold-light);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--brown-dark);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--brown);
+  }
+
+  /* ─── SERVICES PREVIEW ─── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+    margin-top: 3rem;
+  }
+
+  .service-card {
+    background: var(--nude-light);
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--border);
+    transition: all 0.4s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.4s;
+  }
+
+  .service-card:hover::after { width: 100%; }
+  .service-card:hover { background: var(--white); }
+
+  .service-duration {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--brown-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .service-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+  }
+
+  /* ─── GALLERY PREVIEW ─── */
+  .gallery-bg {
+    background: var(--nude);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 220px);
+    gap: 4px;
+    margin-top: 3rem;
+  }
+
+  .gallery-item {
+    background: var(--nude-mid);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-item:first-child {
+    grid-row: span 2;
+  }
+
+  .gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .gallery-placeholder svg {
+    width: 40px;
+    height: 40px;
+    opacity: 0.35;
+  }
+
+  .gallery-placeholder span {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--brown-light);
+    text-transform: uppercase;
+  }
+
+  /* ─── CTA SECTION ─── */
+  .cta-section {
+    background: var(--brown-dark);
+    text-align: center;
+    padding: 6rem 2rem;
+  }
+
+  .cta-section .section-label { color: var(--gold-light); justify-content: center; }
+  .cta-section .section-label::before { background: rgba(232,213,176,0.4); }
+
+  .cta-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300;
+    color: var(--nude-light);
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    color: var(--brown-light);
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  .cta-section .btn-primary {
+    background: var(--gold);
+    color: var(--brown-dark);
+    border-bottom-color: var(--nude-light);
+  }
+
+  .cta-section .btn-primary:hover {
+    background: var(--gold-light);
+  }
+
+  /* ─── SERVICES PAGE ─── */
+  .page-hero {
+    padding: 140px 2rem 4rem;
+    text-align: center;
+    background: var(--nude-light);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .services-full-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2px;
+    margin-top: 4rem;
+  }
+
+  .service-full-card {
+    background: var(--nude-light);
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-full-card:hover {
+    background: var(--white);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(90,56,28,0.08);
+  }
+
+  .service-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    color: var(--gold-light);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-full-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--brown-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .service-time-badge {
+    display: inline-block;
+    background: var(--gold-light);
+    color: var(--brown-dark);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-full-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  /* ─── GALLERY PAGE ─── */
+  .gallery-full-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 6px;
+    margin-top: 3rem;
+  }
+
+  .gallery-full-item {
+    aspect-ratio: 3/4;
+    background: var(--nude-mid);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .gallery-full-item:nth-child(3n+1) { background: var(--nude-mid); }
+  .gallery-full-item:nth-child(3n+2) { background: #DFC9B0; }
+  .gallery-full-item:nth-child(3n+3) { background: #E8D9C6; }
+
+  .gallery-full-item .gallery-placeholder {
+    transition: all 0.4s;
+  }
+
+  .gallery-full-item:hover .gallery-placeholder {
+    transform: scale(1.03);
+  }
+
+  /* ─── BOOKING PAGE ─── */
+  .booking-wrapper {
+    padding: 140px 2rem 6rem;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .booking-steps {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 3rem;
+  }
+
+  .step-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brown-light);
+    transition: color 0.3s;
+  }
+
+  .step-item.active { color: var(--brown-dark); }
+  .step-item.done { color: var(--gold); }
+
+  .step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    transition: all 0.3s;
+  }
+
+  .step-item.active .step-num {
+    background: var(--brown-dark);
+    color: var(--nude-light);
+    border-color: var(--brown-dark);
+  }
+
+  .step-item.done .step-num {
+    background: var(--gold);
+    color: var(--white);
+    border-color: var(--gold);
+  }
+
+  .step-connector {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin: 0 0.8rem;
+  }
+
+  .booking-section {
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .booking-section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .booking-card {
+    background: var(--nude-light);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .booking-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .service-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .service-option {
+    padding: 1.3rem 1.5rem;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    background: var(--white);
+  }
+
+  .service-option:hover {
+    border-color: var(--brown-light);
+    background: var(--nude-light);
+  }
+
+  .service-option.selected {
+    border-color: var(--brown-dark);
+    background: var(--nude);
+  }
+
+  .service-option .opt-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--brown-dark);
+  }
+
+  .service-option .opt-meta {
+    text-align: right;
+  }
+
+  .service-option .opt-duration {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  /* DATE PICKER */
+  .date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+
+  .date-day-header {
+    text-align: center;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brown-light);
+    padding: 6px 0;
+  }
+
+  .date-cell {
+    text-align: center;
+    padding: 8px 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    color: var(--text);
+    border-radius: 0;
+  }
+
+  .date-cell:hover:not(.disabled):not(.past) {
+    background: var(--nude);
+    border-color: var(--brown-light);
+  }
+
+  .date-cell.selected {
+    background: var(--brown-dark);
+    color: var(--nude-light);
+    border-color: var(--brown-dark);
+  }
+
+  .date-cell.disabled, .date-cell.past {
+    color: var(--border);
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .date-cell.today {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .cal-nav-btn {
+    background: none;
+    border: 1px solid var(--border);
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brown);
+    font-size: 1rem;
+    transition: all 0.2s;
+  }
+
+  .cal-nav-btn:hover {
+    background: var(--nude);
+    border-color: var(--brown);
+  }
+
+  .cal-month-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--brown-dark);
+  }
+
+  /* TIME SLOTS */
+  .time-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 6px;
+  }
+
+  .time-slot {
+    padding: 0.65rem;
+    text-align: center;
+    font-size: 0.82rem;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--white);
+    color: var(--text);
+  }
+
+  .time-slot:hover:not(.booked) {
+    border-color: var(--brown-light);
+    background: var(--nude);
+  }
+
+  .time-slot.selected {
+    background: var(--brown-dark);
+    color: var(--nude-light);
+    border-color: var(--brown-dark);
+  }
+
+  .time-slot.booked {
+    background: var(--nude-light);
+    color: var(--border);
+    cursor: not-allowed;
+    text-decoration: line-through;
+    font-size: 0.75rem;
+  }
+
+  /* FORM */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.92rem;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.3s;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  .form-input:focus {
+    border-color: var(--brown);
+  }
+
+  textarea.form-input {
+    resize: vertical;
+    min-height: 90px;
+    line-height: 1.6;
+  }
+
+  /* PROVIDER CARD */
+  .provider-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+
+  .provider-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--nude-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--brown);
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+
+  .provider-info small {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .provider-info strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--brown-dark);
+  }
+
+  /* BOOKING SUMMARY */
+  .booking-summary {
+    background: var(--nude);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+  }
+
+  .summary-row:last-child { border-bottom: none; }
+  .summary-row .label { color: var(--text-muted); }
+  .summary-row .value { font-weight: 400; color: var(--brown-dark); }
+
+  /* CONFIRMATION */
+  .confirmation {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--nude-light);
+    border: 1px solid var(--border);
+  }
+
+  .confirmation-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .confirmation h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--brown-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .confirmation p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    transition: background 0.3s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .wa-btn:hover { background: #1fb558; }
+
+  /* ─── CONTACT PAGE ─── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .contact-item {
+    padding: 2rem;
+    background: var(--nude-light);
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .contact-item:hover {
+    background: var(--white);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(90,56,28,0.07);
+  }
+
+  .contact-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.3rem;
+  }
+
+  .contact-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--brown-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-item p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+  }
+
+  .wa-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .wa-contact-btn:hover { background: #1fb558; }
+
+  .ig-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+
+  .ig-btn:hover { opacity: 0.88; }
+
+  .location-box {
+    padding: 2rem;
+    background: var(--nude-light);
+    border: 1px solid var(--border);
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .location-box .loc-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    color: var(--brown-light);
+  }
+
+  .location-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--brown-dark);
+    margin-bottom: 0.25rem;
+  }
+
+  .location-box p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--brown-dark);
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    color: var(--brown-light);
+  }
+
+  footer .foot-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: var(--nude-light);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  footer p {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    color: var(--brown-light);
+  }
+
+  footer .foot-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(201,169,110,0.4);
+    margin: 1.5rem auto;
+  }
+
+  footer .foot-copy {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: rgba(196,168,130,0.5);
+    margin: 0;
+  }
+
+  /* ─── STICKY BOOK BUTTON ─── */
+  .sticky-book {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 90;
+    background: var(--brown-dark);
+    color: var(--nude-light);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.9rem 1.6rem;
+    cursor: pointer;
+    border: none;
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 8px 30px rgba(58,37,16,0.3);
+    transition: all 0.3s;
+    display: none;
+  }
+
+  .sticky-book:hover {
+    background: var(--brown);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(58,37,16,0.4);
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+
+    .nav-links {
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      padding: 2rem;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: none;
+      text-align: center;
+    }
+
+    .nav-links.open { display: flex; }
+    .nav-links .nav-book-btn { padding: 0.8rem 2rem; }
+
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    .gallery-item:first-child { grid-row: span 1; }
+
+    .contact-grid { grid-template-columns: 1fr; }
+
+    .booking-steps { display: none; }
+
+    .date-grid { grid-template-columns: repeat(7, 1fr); }
+    .date-cell { padding: 6px 2px; font-size: 0.78rem; }
+
+    .sticky-book { display: block; }
+
+    .services-full-grid { grid-template-columns: 1fr; }
+
+    .gallery-full-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .time-slots { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* Loading spinner */
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 3rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+
+  .spinner {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--border);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Error state */
+  .no-slots {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  /* Transition between pages - handled by display:none above */
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="#" class="nav-logo" onclick="showPage('home'); return false;">Ranié Henna</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-menu">
+    <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+    <li><a href="#" onclick="showPage('services'); return false;">Services</a></li>
+    <li><a href="#" onclick="showPage('gallery'); return false;">Gallery</a></li>
+    <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+    <li><a href="#" onclick="showPage('booking'); return false;" class="nav-book-btn">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     PAGE: HOME
+═══════════════════════════════════════ -->
+<main class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="hero-ornament">Luxury Henna Art</div>
+      <h1>Ranié Henna</h1>
+      <p class="hero-tagline">Elegant henna designs for every occasion</p>
+      <button class="btn-primary" onclick="showPage('booking')">Book Your Appointment</button>
+    </div>
+    <div class="scroll-hint">Discover</div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <div style="background: var(--white);">
+    <div class="section">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Artistry crafted <em>just for you</em></h2>
+      <p style="color: var(--text-muted); max-width: 500px; font-size: 0.93rem;">
+        Each design is meticulously applied by hand, tailored to your occasion and aesthetic — from intimate bridal mehndi to elegant everyday art.
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">✦</div>
+          <div class="service-duration">25 minutes</div>
+          <div class="service-name">Small Hand Design</div>
+          <p class="service-desc">Delicate, intricate patterns for a single hand. Perfect for everyday elegance or spontaneous occasions.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">❋</div>
+          <div class="service-duration">45 minutes</div>
+          <div class="service-name">Full Hand Design</div>
+          <p class="service-desc">A full, elaborate design covering the entire hand. Beautiful for events, celebrations, or gifting yourself art.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">◈</div>
+          <div class="service-duration">60 minutes</div>
+          <div class="service-name">Both Hands</div>
+          <p class="service-desc">Complete, matching designs for both hands. The ultimate henna experience for weddings and special events.</p>
+        </div>
+      </div>
+      <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn-outline" onclick="showPage('services')">View All Services</button>
+        <button class="btn-primary" onclick="showPage('booking')">Book Your Appointment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY PREVIEW -->
+  <div class="section-full gallery-bg">
+    <div class="section" style="padding-top: 0; padding-bottom: 0;">
+      <div class="section-label">Our Work</div>
+      <h2 class="section-title">A glimpse of <em>our artistry</em></h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="IMG_7615.jpg" alt="Henna floral design" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7613.jpg" alt="Henna floral design" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7611.jpg" alt="Henna design" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7610.jpg" alt="Henna wrist design" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_7614.jpg" alt="Henna design" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+      <div style="margin-top: 2.5rem;">
+        <button class="btn-outline" onclick="showPage('gallery')">View Full Gallery</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="section-label" style="justify-content: center;">Ready to Begin</div>
+    <h2>Book your appointment today</h2>
+    <p>Choose your service, pick your date, and let us create something beautiful together.</p>
+    <button class="btn-primary" onclick="showPage('booking')">Book Your Appointment</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="foot-logo">Ranié Henna</span>
+    <p>Elegant henna designs for every occasion</p>
+    <div class="foot-divider"></div>
+    <p class="foot-copy">© 2026 Ranié Henna · West Beqaa, Lebanon · All rights reserved</p>
+  </footer>
+
+</main>
+
+<!-- ═══════════════════════════════════════
+     PAGE: SERVICES
+═══════════════════════════════════════ -->
+<main class="page" id="page-services">
+
+  <div class="page-hero">
+    <div class="section-label" style="justify-content: center;">What We Offer</div>
+    <h1 class="section-title" style="margin-bottom: 0.5rem;">Our Services</h1>
+    <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 420px; margin: 0 auto;">
+      Handcrafted henna art designed around your timeline and vision.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="services-full-grid">
+      <div class="service-full-card">
+        <div class="service-number">01</div>
+        <div class="service-full-name">Small Hand Design</div>
+        <div class="service-time-badge">25 minutes</div>
+        <p class="service-full-desc">A beautifully detailed design for one hand. Whether you want floral motifs, geometric patterns, or minimalist art — this session is perfect for everyday elegance or a spontaneous treat.</p>
+        <div style="margin-top: 2rem;">
+          <button class="btn-primary" onclick="showPage('booking')">Book This Service</button>
+        </div>
+      </div>
+      <div class="service-full-card">
+        <div class="service-number">02</div>
+        <div class="service-full-name">Full Hand Design</div>
+        <div class="service-time-badge">45 minutes</div>
+        <p class="service-full-desc">A lush, elaborate design that flows from fingertips to wrist. Ideal for celebrations, events, or simply treating yourself to a work of wearable art that lasts for days.</p>
+        <div style="margin-top: 2rem;">
+          <button class="btn-primary" onclick="showPage('booking')">Book This Service</button>
+        </div>
+      </div>
+      <div class="service-full-card">
+        <div class="service-number">03</div>
+        <div class="service-full-name">Both Hands</div>
+        <div class="service-time-badge">60 minutes</div>
+        <p class="service-full-desc">The complete henna experience — matching or complementary designs for both hands. The signature choice for weddings, engagements, and moments that deserve to be remembered.</p>
+        <div style="margin-top: 2rem;">
+          <button class="btn-primary" onclick="showPage('booking')">Book This Service</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--nude); border: 1px solid var(--border); padding: 3rem 2.5rem; margin-top: 4rem; text-align: center;">
+      <div class="section-label" style="justify-content: center; margin-bottom: 1rem;">Good to Know</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: left; margin-top: 1.5rem;">
+        <div>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--brown-dark); margin-bottom: 0.3rem;">Natural Ingredients</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">We use only 100% natural henna paste for safe, skin-friendly application.</p>
+        </div>
+        <div>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--brown-dark); margin-bottom: 0.3rem;">Lasts 1–3 Weeks</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Results vary by skin type. Avoid water for at least 8 hours post-application.</p>
+        </div>
+        <div>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--brown-dark); margin-bottom: 0.3rem;">Arrive Relaxed</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">No preparation needed. Clean, dry hands are ideal for best results.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="foot-logo">Ranié Henna</span>
+    <div class="foot-divider"></div>
+    <p class="foot-copy">© 2026 Ranié Henna · West Beqaa, Lebanon</p>
+  </footer>
+</main>
+
+<!-- ═══════════════════════════════════════
+     PAGE: GALLERY
+═══════════════════════════════════════ -->
+<main class="page" id="page-gallery">
+
+  <div class="page-hero">
+    <div class="section-label" style="justify-content: center;">Our Portfolio</div>
+    <h1 class="section-title" style="margin-bottom: 0.5rem;">Gallery</h1>
+    <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 400px; margin: 0 auto;">
+      A selection of our henna designs. Each piece is unique, crafted with care and intention.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="gallery-full-grid" id="gallery-grid">
+      <div class="gallery-full-item"><img src="IMG_7615.jpg" alt="Floral henna hand design" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;"></div>
+      <div class="gallery-full-item"><img src="IMG_7614.jpg" alt="Delicate finger henna" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;"></div>
+      <div class="gallery-full-item"><img src="IMG_7613.jpg" alt="Botanical henna hand design" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;"></div>
+      <div class="gallery-full-item"><img src="IMG_7612.jpg" alt="Vine and leaf henna" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;"></div>
+      <div class="gallery-full-item"><img src="IMG_7611.jpg" alt="Stars and swirls henna" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;"></div>
+      <div class="gallery-full-item"><img src="IMG_7610.jpg" alt="Wrist cuff henna design" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;"></div>
+      <div class="gallery-full-item"><img src="IMG_6238.jpg" alt="Butterfly and floral henna" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;"></div>
+      <div class="gallery-full-item"><img src="IMG_6235.jpg" alt="Full hand henna design" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;"></div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="foot-logo">Ranié Henna</span>
+    <div class="foot-divider"></div>
+    <p class="foot-copy">© 2026 Ranié Henna · West Beqaa, Lebanon</p>
+  </footer>
+</main>
+
+<!-- ═══════════════════════════════════════
+     PAGE: BOOKING
+═══════════════════════════════════════ -->
+<main class="page" id="page-booking">
+  <div class="booking-wrapper">
+
+    <div style="margin-bottom: 2rem;">
+      <div class="section-label">Appointments</div>
+      <h1 class="section-title" style="font-size: 2.2rem;">Book Your <em>Appointment</em></h1>
+      <p style="color: var(--text-muted); font-size: 0.88rem;">Choose your service, select a date and time, and confirm your booking.</p>
+    </div>
+
+    <!-- STEPS INDICATOR -->
+    <div class="booking-steps">
+      <div class="step-item active" id="step-indicator-1">
+        <div class="step-num">1</div>
+        <span>Service</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item" id="step-indicator-2">
+        <div class="step-num">2</div>
+        <span>Date & Time</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item" id="step-indicator-3">
+        <div class="step-num">3</div>
+        <span>Your Details</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item" id="step-indicator-4">
+        <div class="step-num">4</div>
+        <span>Confirm</span>
+      </div>
+    </div>
+
+    <!-- STEP 1: SERVICE -->
+    <div class="booking-section active" id="step-1">
+      <div class="booking-card">
+        <div class="booking-label">Select a Service</div>
+        <div class="service-options">
+          <div class="service-option" onclick="selectService('small', 'Small Hand Design', 25)" id="opt-small">
+            <div>
+              <div class="opt-name">Small Hand Design</div>
+              <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">One hand · Floral or geometric</div>
+            </div>
+            <div class="opt-meta">
+              <div class="opt-duration">25 min</div>
+            </div>
+          </div>
+          <div class="service-option" onclick="selectService('full', 'Full Hand Design', 45)" id="opt-full">
+            <div>
+              <div class="opt-name">Full Hand Design</div>
+              <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">One hand · Full coverage</div>
+            </div>
+            <div class="opt-meta">
+              <div class="opt-duration">45 min</div>
+            </div>
+          </div>
+          <div class="service-option" onclick="selectService('both', 'Both Hands', 60)" id="opt-both">
+            <div>
+              <div class="opt-name">Both Hands</div>
+              <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">Both hands · Full coverage</div>
+            </div>
+            <div class="opt-meta">
+              <div class="opt-duration">60 min</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: flex-end;">
+        <button class="btn-primary" onclick="goToStep(2)" id="btn-step-1" disabled style="opacity:0.4; cursor:not-allowed;">Continue</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: DATE & TIME -->
+    <div class="booking-section" id="step-2">
+      <div class="booking-card">
+        <div class="booking-label">Select a Date</div>
+        <div class="calendar-nav">
+          <button class="cal-nav-btn" onclick="changeMonth(-1)">&#8249;</button>
+          <span class="cal-month-year" id="cal-month-year"></span>
+          <button class="cal-nav-btn" onclick="changeMonth(1)">&#8250;</button>
+        </div>
+        <div class="date-grid" id="cal-days-header"></div>
+        <div class="date-grid" id="cal-grid"></div>
+      </div>
+
+      <div class="booking-card" id="time-slot-card" style="display:none;">
+        <div class="booking-label">Available Time Slots</div>
+        <div id="time-slots-container"></div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn-outline" onclick="goToStep(1)">Back</button>
+        <button class="btn-primary" onclick="goToStep(3)" id="btn-step-2" disabled style="opacity:0.4; cursor:not-allowed;">Continue</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: DETAILS -->
+    <div class="booking-section" id="step-3">
+      <div class="booking-card">
+        <div class="booking-label">Your Information</div>
+
+        <div class="provider-card">
+          <div class="provider-avatar">RJ</div>
+          <div class="provider-info">
+            <small>Your Provider</small>
+            <strong>Razan Jomaa el-Azanky</strong>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="client-name">Full Name *</label>
+          <input type="text" id="client-name" class="form-input" placeholder="Enter your full name" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="client-phone">Phone Number *</label>
+          <input type="tel" id="client-phone" class="form-input" placeholder="+961 XX XXX XXX" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="client-notes">Notes (Optional)</label>
+          <textarea id="client-notes" class="form-input" placeholder="Any preferences, occasions, or special requests..."></textarea>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn-outline" onclick="goToStep(2)">Back</button>
+        <button class="btn-primary" onclick="goToStep(4)">Review Booking</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: CONFIRM -->
+    <div class="booking-section" id="step-4">
+      <div class="booking-label" style="margin-bottom: 1.2rem;">Review Your Booking</div>
+
+      <div class="provider-card">
+        <div class="provider-avatar">RJ</div>
+        <div class="provider-info">
+          <small>Service Provider</small>
+          <strong>Razan Jomaa el-Azanky</strong>
+        </div>
+      </div>
+
+      <div class="booking-summary">
+        <div class="summary-row">
+          <span class="label">Service</span>
+          <span class="value" id="summary-service">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Duration</span>
+          <span class="value" id="summary-duration">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Date</span>
+          <span class="value" id="summary-date">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Time</span>
+          <span class="value" id="summary-time">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Name</span>
+          <span class="value" id="summary-name">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Phone</span>
+          <span class="value" id="summary-phone">—</span>
+        </div>
+        <div class="summary-row" id="summary-notes-row" style="display:none;">
+          <span class="label">Notes</span>
+          <span class="value" id="summary-notes">—</span>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn-outline" onclick="goToStep(3)">Back</button>
+        <button class="btn-primary" onclick="confirmBooking()">Confirm Appointment</button>
+      </div>
+    </div>
+
+    <!-- STEP 5: CONFIRMED -->
+    <div class="booking-section" id="step-5">
+      <div class="confirmation">
+        <div class="confirmation-icon">✓</div>
+        <h2>Appointment Confirmed!</h2>
+        <p>Your booking has been saved. A WhatsApp message is being prepared for you.</p>
+
+        <div class="booking-summary" style="text-align: left; margin: 1.5rem auto; max-width: 400px;">
+          <div class="summary-row">
+            <span class="label">Service</span>
+            <span class="value" id="conf-service">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="label">Date</span>
+            <span class="value" id="conf-date">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="label">Time</span>
+            <span class="value" id="conf-time">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="label">Provider</span>
+            <span class="value">Razan Jomaa el-Azanky</span>
+          </div>
+        </div>
+
+        <button class="wa-btn" onclick="openWhatsApp()" id="wa-confirm-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.59 5.97L0 24l6.18-1.62A11.96 11.96 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.87 0-3.7-.5-5.3-1.45l-.38-.22-3.93 1.03 1.04-3.84-.25-.4A9.95 9.95 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10zm5.47-7.4c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15s-.78.97-.95 1.17c-.18.2-.35.22-.65.07a8.13 8.13 0 01-2.39-1.48 8.96 8.96 0 01-1.65-2.06c-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51l-.58-.01c-.2 0-.52.07-.79.37s-1.03 1.01-1.03 2.47 1.05 2.86 1.2 3.06c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.67.61.7.22 1.34.19 1.85.12.56-.08 1.73-.71 1.97-1.39.25-.68.25-1.27.17-1.39-.07-.12-.27-.2-.57-.35z"/>
+          </svg>
+          Send WhatsApp Confirmation
+        </button>
+
+        <div style="margin-top: 1.5rem;">
+          <button class="btn-outline" onclick="newBooking()" style="font-size: 0.78rem;">Book Another Appointment</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="foot-logo">Ranié Henna</span>
+    <div class="foot-divider"></div>
+    <p class="foot-copy">© 2026 Ranié Henna · West Beqaa, Lebanon</p>
+  </footer>
+</main>
+
+<!-- ═══════════════════════════════════════
+     PAGE: CONTACT
+═══════════════════════════════════════ -->
+<main class="page" id="page-contact">
+
+  <div class="page-hero">
+    <div class="section-label" style="justify-content: center;">Get In Touch</div>
+    <h1 class="section-title" style="margin-bottom: 0.5rem;">Contact Us</h1>
+    <p style="color: var(--text-muted); font-size: 0.95rem;">We'd love to hear from you. Reach out via WhatsApp or Instagram.</p>
+  </div>
+
+  <div class="section">
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#5C3D20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.59 5.97L0 24l6.18-1.62A11.96 11.96 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.87 0-3.7-.5-5.3-1.45l-.38-.22-3.93 1.03 1.04-3.84-.25-.4A9.95 9.95 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10zm5.47-7.4c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15s-.78.97-.95 1.17c-.18.2-.35.22-.65.07a8.13 8.13 0 01-2.39-1.48 8.96 8.96 0 01-1.65-2.06c-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51l-.58-.01c-.2 0-.52.07-.79.37s-1.03 1.01-1.03 2.47 1.05 2.86 1.2 3.06c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.67.61.7.22 1.34.19 1.85.12.56-.08 1.73-.71 1.97-1.39.25-.68.25-1.27.17-1.39-.07-.12-.27-.2-.57-.35z"/>
+          </svg>
+        </div>
+        <h3>WhatsApp</h3>
+        <p>Chat with us directly for quick inquiries, availability, or custom design requests.</p>
+        <a href="https://wa.me/96181525879" target="_blank" class="wa-contact-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.59 5.97L0 24l6.18-1.62A11.96 11.96 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52z"/></svg>
+          +961 81 525 879
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon" style="background: linear-gradient(135deg, #f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: white; display: flex; align-items: center; justify-content: center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </div>
+        <h3>Instagram</h3>
+        <p>Follow us for design inspiration, behind-the-scenes moments, and booking updates.</p>
+        <a href="https://instagram.com" target="_blank" class="ig-btn">
+          Follow @ranie.henna
+        </a>
+      </div>
+    </div>
+
+    <div class="location-box">
+      <div class="loc-icon">📍</div>
+      <div>
+        <h3>Location</h3>
+        <p>West Beqaa, Lebanon</p>
+        <p style="margin-top: 0.25rem; font-size: 0.8rem;">Home studio · By appointment only · Contact us on WhatsApp for exact address.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: var(--nude-light); border: 1px solid var(--border);">
+      <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--brown-dark); font-style: italic; margin-bottom: 1rem;">Ready to book?</p>
+      <button class="btn-primary" onclick="showPage('booking')">Book Your Appointment</button>
+    </div>
+  </div>
+
+  <footer>
+    <span class="foot-logo">Ranié Henna</span>
+    <div class="foot-divider"></div>
+    <p class="foot-copy">© 2026 Ranié Henna · West Beqaa, Lebanon</p>
+  </footer>
+</main>
+
+<!-- STICKY BOOKING BUTTON -->
+<button class="sticky-book" onclick="showPage('booking')">Book Now</button>
+
+<script>
+/* ═══════════════════════════════════════
+   BOOKING STORAGE (localStorage)
+═══════════════════════════════════════ */
+const STORAGE_KEY = 'ranie_bookings';
+
+function getBookings() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  } catch {
+    return {};
+  }
+}
+
+function saveBooking(date, time, durationMins, service, clientName, clientPhone, clientNotes) {
+  const bookings = getBookings();
+  if (!bookings[date]) bookings[date] = {};
+  // Mark all slots occupied by this booking
+  const [h, m] = time.split(':').map(Number);
+  const startMins = h * 60 + m;
+  for (let i = 0; i < durationMins; i += 15) {
+    const slotMins = startMins + i;
+    const sh = String(Math.floor(slotMins / 60)).padStart(2, '0');
+    const sm = String(slotMins % 60).padStart(2, '0');
+    bookings[date][`${sh}:${sm}`] = { service, clientName };
+  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(bookings));
+}
+
+function getBookedSlots(date) {
+  const bookings = getBookings();
+  return bookings[date] || {};
+}
+
+/* ═══════════════════════════════════════
+   PAGE ROUTING
+═══════════════════════════════════════ */
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('nav-menu').classList.remove('open');
+
+  const stickyBtn = document.querySelector('.sticky-book');
+  stickyBtn.style.display = name === 'booking' ? 'none' : 'block';
+}
+
+function toggleMenu() {
+  document.getElementById('nav-menu').classList.toggle('open');
+}
+
+/* ═══════════════════════════════════════
+   BOOKING STATE
+═══════════════════════════════════════ */
+const booking = {
+  serviceId: null,
+  serviceName: null,
+  durationMins: null,
+  date: null,
+  dateFormatted: null,
+  time: null,
+  timeFormatted: null
+};
+
+/* ═══════════════════════════════════════
+   STEP NAVIGATION
+═══════════════════════════════════════ */
+function goToStep(n) {
+  // Validate step 3 fields
+  if (n === 4) {
+    const name = document.getElementById('client-name').value.trim();
+    const phone = document.getElementById('client-phone').value.trim();
+    if (!name || !phone) {
+      alert('Please fill in your name and phone number.');
+      return;
+    }
+    // Populate summary
+    document.getElementById('summary-service').textContent = booking.serviceName;
+    document.getElementById('summary-duration').textContent = booking.durationMins + ' minutes';
+    document.getElementById('summary-date').textContent = booking.dateFormatted;
+    document.getElementById('summary-time').textContent = booking.timeFormatted;
+    document.getElementById('summary-name').textContent = name;
+    document.getElementById('summary-phone').textContent = phone;
+    const notes = document.getElementById('client-notes').value.trim();
+    if (notes) {
+      document.getElementById('summary-notes').textContent = notes;
+      document.getElementById('summary-notes-row').style.display = 'flex';
+    }
+  }
+
+  document.querySelectorAll('.booking-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('step-' + n).classList.add('active');
+
+  for (let i = 1; i <= 4; i++) {
+    const ind = document.getElementById('step-indicator-' + i);
+    if (!ind) continue;
+    ind.classList.remove('active', 'done');
+    if (i < n) ind.classList.add('done');
+    else if (i === n) ind.classList.add('active');
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ═══════════════════════════════════════
+   SERVICE SELECTION
+═══════════════════════════════════════ */
+function selectService(id, name, duration) {
+  booking.serviceId = id;
+  booking.serviceName = name;
+  booking.durationMins = duration;
+
+  document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
+  document.getElementById('opt-' + id).classList.add('selected');
+
+  const btn = document.getElementById('btn-step-1');
+  btn.disabled = false;
+  btn.style.opacity = '1';
+  btn.style.cursor = 'pointer';
+}
+
+/* ═══════════════════════════════════════
+   CALENDAR
+═══════════════════════════════════════ */
+let calYear, calMonth;
+
+function initCalendar() {
+  const now = new Date();
+  calYear = now.getFullYear();
+  calMonth = now.getMonth();
+  renderCalendar();
+}
+
+function changeMonth(delta) {
+  calMonth += delta;
+  if (calMonth > 11) { calMonth = 0; calYear++; }
+  if (calMonth < 0) { calMonth = 11; calYear--; }
+  renderCalendar();
+}
+
+function renderCalendar() {
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('cal-month-year').textContent = months[calMonth] + ' ' + calYear;
+
+  // Day headers
+  const header = document.getElementById('cal-days-header');
+  const days = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+  header.innerHTML = days.map(d => `<div class="date-day-header">${d}</div>`).join('');
+
+  const firstDay = new Date(calYear, calMonth, 1).getDay();
+  const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  const grid = document.getElementById('cal-grid');
+  let html = '';
+
+  // Empty cells before first day
+  for (let i = 0; i < firstDay; i++) {
+    html += '<div class="date-cell disabled"></div>';
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const date = new Date(calYear, calMonth, d);
+    const dateStr = formatDateKey(calYear, calMonth, d);
+    const isPast = date < today;
+    const isSun = date.getDay() === 0;
+    const isToday = date.toDateString() === today.toDateString();
+    const isSelected = booking.date === dateStr;
+
+    let cls = 'date-cell';
+    if (isPast || isSun) cls += ' past';
+    if (isToday) cls += ' today';
+    if (isSelected) cls += ' selected';
+
+    const action = (!isPast && !isSun) ? `onclick="selectDate('${dateStr}', ${d})"` : '';
+    html += `<div class="${cls}" ${action}>${d}</div>`;
+  }
+
+  grid.innerHTML = html;
+}
+
+function formatDateKey(y, m, d) {
+  return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+}
+
+function selectDate(dateStr, day) {
+  booking.date = dateStr;
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const dateObj = new Date(calYear, calMonth, day);
+  booking.dateFormatted = dayNames[dateObj.getDay()] + ', ' + day + ' ' + months[calMonth] + ' ' + calYear;
+
+  // Reset time
+  booking.time = null;
+  booking.timeFormatted = null;
+  const btn2 = document.getElementById('btn-step-2');
+  btn2.disabled = true;
+  btn2.style.opacity = '0.4';
+  btn2.style.cursor = 'not-allowed';
+
+  renderCalendar();
+  renderTimeSlots(dateStr);
+}
+
+/* ═══════════════════════════════════════
+   TIME SLOTS
+═══════════════════════════════════════ */
+function renderTimeSlots(dateStr) {
+  const card = document.getElementById('time-slot-card');
+  const container = document.getElementById('time-slots-container');
+
+  card.style.display = 'block';
+  container.innerHTML = '<div class="loading"><div class="spinner"></div><span>Loading availability...</span></div>';
+
+  setTimeout(() => {
+    const bookedSlots = getBookedSlots(dateStr);
+    const slots = generateTimeSlots();
+
+    if (slots.length === 0) {
+      container.innerHTML = '<div class="no-slots">No time slots available for this date.</div>';
+      return;
+    }
+
+    let html = '<div class="time-slots">';
+    slots.forEach(slot => {
+      const isBooked = isSlotBooked(slot.value, booking.durationMins, bookedSlots);
+      const isSelected = booking.time === slot.value;
+      let cls = 'time-slot';
+      if (isBooked) cls += ' booked';
+      if (isSelected) cls += ' selected';
+      const action = !isBooked ? `onclick="selectTime('${slot.value}', '${slot.label}')"` : '';
+      html += `<div class="${cls}" ${action}>${slot.label}${isBooked ? '<br><span style="font-size:0.65rem">Booked</span>' : ''}</div>`;
+    });
+    html += '</div>';
+    container.innerHTML = html;
+  }, 400);
+}
+
+function generateTimeSlots() {
+  const slots = [];
+  // 10:00 AM to 7:00 PM, every 15 min
+  for (let h = 10; h < 19; h++) {
+    for (let m = 0; m < 60; m += 15) {
+      const val = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`;
+      const period = h < 12 ? 'AM' : 'PM';
+      const dh = h <= 12 ? h : h - 12;
+      const dm = String(m).padStart(2,'0');
+      slots.push({ value: val, label: `${dh}:${dm} ${period}` });
+    }
+  }
+  return slots;
+}
+
+function isSlotBooked(slotTime, durationMins, bookedSlots) {
+  const [h, m] = slotTime.split(':').map(Number);
+  const startMins = h * 60 + m;
+  for (let i = 0; i < durationMins; i += 15) {
+    const checkMins = startMins + i;
+    const sh = String(Math.floor(checkMins / 60)).padStart(2, '0');
+    const sm = String(checkMins % 60).padStart(2, '0');
+    if (bookedSlots[`${sh}:${sm}`]) return true;
+  }
+  // Also check if slot end goes past 7:00 PM
+  if (startMins + durationMins > 19 * 60) return true;
+  return false;
+}
+
+function selectTime(value, label) {
+  booking.time = value;
+  booking.timeFormatted = label;
+
+  document.querySelectorAll('.time-slot').forEach(t => t.classList.remove('selected'));
+  event.target.closest('.time-slot').classList.add('selected');
+
+  const btn = document.getElementById('btn-step-2');
+  btn.disabled = false;
+  btn.style.opacity = '1';
+  btn.style.cursor = 'pointer';
+}
+
+/* ═══════════════════════════════════════
+   CONFIRM BOOKING
+═══════════════════════════════════════ */
+function confirmBooking() {
+  const name = document.getElementById('client-name').value.trim();
+  const phone = document.getElementById('client-phone').value.trim();
+  const notes = document.getElementById('client-notes').value.trim();
+
+  // Save to localStorage
+  saveBooking(booking.date, booking.time, booking.durationMins, booking.serviceName, name, phone, notes);
+
+  // Fill confirmation
+  document.getElementById('conf-service').textContent = booking.serviceName;
+  document.getElementById('conf-date').textContent = booking.dateFormatted;
+  document.getElementById('conf-time').textContent = booking.timeFormatted;
+
+  document.querySelectorAll('.booking-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('step-5').classList.add('active');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Auto open WhatsApp after 1.5s
+  setTimeout(() => openWhatsApp(), 1500);
+}
+
+function openWhatsApp() {
+  const name = document.getElementById('client-name').value.trim();
+  const phone = document.getElementById('client-phone').value.trim();
+  const notes = document.getElementById('client-notes').value.trim();
+
+  const msg =
+`✨ *Booking Confirmation — Ranié Henna*
+
+Hello! I would like to confirm my appointment:
+
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+💫 *Service:* ${booking.serviceName}
+⏱ *Duration:* ${booking.durationMins} minutes
+📅 *Date:* ${booking.dateFormatted}
+🕐 *Time:* ${booking.timeFormatted}
+💎 *Provider:* Razan Jomaa el-Azanky
+${notes ? `\n📝 *Notes:* ${notes}` : ''}
+
+Thank you for this beautiful experience! 🌿`;
+
+  const encoded = encodeURIComponent(msg);
+  window.open(`https://wa.me/96181525879?text=${encoded}`, '_blank');
+}
+
+function newBooking() {
+  // Reset state
+  booking.serviceId = null;
+  booking.serviceName = null;
+  booking.durationMins = null;
+  booking.date = null;
+  booking.dateFormatted = null;
+  booking.time = null;
+  booking.timeFormatted = null;
+
+  document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
+  document.getElementById('client-name').value = '';
+  document.getElementById('client-phone').value = '';
+  document.getElementById('client-notes').value = '';
+
+  const btn1 = document.getElementById('btn-step-1');
+  btn1.disabled = true;
+  btn1.style.opacity = '0.4';
+  btn1.style.cursor = 'not-allowed';
+
+  document.getElementById('time-slot-card').style.display = 'none';
+
+  goToStep(1);
+  initCalendar();
+}
+
+/* ═══════════════════════════════════════
+   GALLERY
+═══════════════════════════════════════ */
+function buildGallery() {
+  const grid = document.getElementById('gallery-grid');
+  const images = [
+    { src: 'IMG_7615.jpg', alt: 'Floral henna hand design' },
+    { src: 'IMG_7614.jpg', alt: 'Delicate finger henna' },
+    { src: 'IMG_7613.jpg', alt: 'Botanical henna hand design' },
+    { src: 'IMG_7612.jpg', alt: 'Vine and leaf henna' },
+    { src: 'IMG_7611.jpg', alt: 'Stars and swirls henna' },
+    { src: 'IMG_7610.jpg', alt: 'Wrist cuff henna design' },
+    { src: 'IMG_6238.jpg', alt: 'Butterfly and floral henna' },
+    { src: 'IMG_6235.jpg', alt: 'Full hand henna design' },
+  ];
+  let html = '';
+  images.forEach(img => {
+    html += `<div class="gallery-full-item"><img src="${img.src}" alt="${img.alt}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;"></div>`;
+  });
+  if (grid) grid.innerHTML = html;
+  document.querySelectorAll('.gallery-full-item').forEach(item => {
+    const img = item.querySelector('img');
+    item.addEventListener('mouseenter', () => { if(img) img.style.transform = 'scale(1.04)'; });
+    item.addEventListener('mouseleave', () => { if(img) img.style.transform = 'scale(1)'; });
+  });
+}
+
+
+/* ═══════════════════════════════════════
+   INIT
+═══════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  initCalendar();
+  buildGallery();
+});
+</script>
+</body>
+</html>
