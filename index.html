@@ -970,6 +970,13 @@ function showPage(name){
   window.scrollTo({top:0,behavior:'smooth'});
   document.getElementById('nav-menu').classList.remove('open');
   document.querySelector('.sticky-book').style.display = name==='booking'?'none':'block';
+  // Hide guide arrow and pulse as soon as they navigate to booking
+  if(name==='booking'){
+    const arrow = document.getElementById('guide-arrow');
+    if(arrow) arrow.classList.remove('show');
+    const stickyBtn = document.getElementById('sticky-book-btn');
+    if(stickyBtn) stickyBtn.classList.remove('pulse-hint');
+  }
 }
 function toggleMenu(){ document.getElementById('nav-menu').classList.toggle('open'); }
 
